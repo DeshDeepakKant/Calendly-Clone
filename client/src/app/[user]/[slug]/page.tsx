@@ -75,6 +75,7 @@ export default function BookingPage({
                 setFormData({
                     name: data.inviteeName,
                     email: data.inviteeEmail,
+                    customAnswers: {},
                 });
             }
         } catch (error) {
