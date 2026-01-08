@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { getApiUrl } from '@/lib/config';
 
 type EventType = {
     id: number;
@@ -49,7 +50,7 @@ export default function AdminDashboard() {
         customQuestions: [] as CustomQuestion[],
     });
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+    const API_URL = getApiUrl();
 
     useEffect(() => {
         fetchEventTypes();

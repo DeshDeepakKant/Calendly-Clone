@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useSearchParams } from 'next/navigation';
+import { getApiUrl } from '@/lib/config';
 
 type EventType = {
     id: number;
@@ -56,7 +57,7 @@ export default function BookingPage({
     });
     const [bookingSuccess, setBookingSuccess] = useState(false);
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+    const API_URL = getApiUrl();
 
     // Check for reschedule mode
     useEffect(() => {

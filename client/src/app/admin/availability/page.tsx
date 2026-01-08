@@ -2,6 +2,7 @@
 
 import { useState, useEffect, ChangeEvent } from 'react';
 import Link from 'next/link';
+import { getApiUrl } from '@/lib/config';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
@@ -58,7 +59,7 @@ export default function AvailabilityPage() {
         isUnavailable: false,
     });
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+    const API_URL = getApiUrl();
 
     useEffect(() => {
         fetchAvailability();

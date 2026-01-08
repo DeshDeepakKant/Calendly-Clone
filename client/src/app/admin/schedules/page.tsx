@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { getApiUrl } from '@/lib/config';
 
 type Availability = {
     id: number;
@@ -42,7 +43,7 @@ export default function SchedulesPage() {
     });
     const [selectedDays, setSelectedDays] = useState<Set<number>>(new Set());
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+    const API_URL = getApiUrl();
 
     useEffect(() => {
         fetchSchedules();

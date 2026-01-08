@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { getApiUrl } from '@/lib/config';
 
 type Meeting = {
     id: number;
@@ -24,7 +25,7 @@ export default function MeetingsPage() {
     const [meetings, setMeetings] = useState<Meeting[]>([]);
     const [loading, setLoading] = useState(true);
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+    const API_URL = getApiUrl();
 
     useEffect(() => {
         fetchMeetings();
