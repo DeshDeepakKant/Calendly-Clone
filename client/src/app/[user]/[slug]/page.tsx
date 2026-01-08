@@ -111,7 +111,7 @@ export default function BookingPage({
         async function fetchSlots() {
             setLoadingSlots(true);
             try {
-                const dateStr = selectedDate.toISOString().split('T')[0];
+                const dateStr = selectedDate!.toISOString().split('T')[0];
                 const response = await fetch(
                     `${API_URL}/api/slots?date=${dateStr}&slug=${params.slug}`
                 );
