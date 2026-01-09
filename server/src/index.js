@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Middleware
-app.use(cors({ origin: [process.env.CLIENT_URL], credentials: true, methods: ['GET', 'PUT', 'POST', 'DELETE'] }));
+app.use(cors({ origin: [ "https://motivated-grace-production.up.railway.app" ], credentials: true, methods: ['GET', 'PUT', 'POST', 'DELETE'] }));
 app.use(express.json());
 
 // Routes
